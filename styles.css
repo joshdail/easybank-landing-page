@@ -369,8 +369,8 @@ section {
 
 .card-container {
   display: grid;
-  justify-items: space-between;
-  row-gap: 2em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2em;
 }
 
 .card {

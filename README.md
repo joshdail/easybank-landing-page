@@ -40,8 +40,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/joshdail/easybank-landing-page](https://github.com/joshdail/easybank-landing-page)
+- Live Site URL: [https://joshdail.github.io/easybank-landing-page/](https://joshdail.github.io/easybank-landing-page/)
 
 ## My process
 
@@ -59,18 +59,18 @@ A site with this many components required a good amount of testing to make sure 
 
 One of the most difficult parts of the layout was handling the background images in the first section after the header. Even after many attempts I wasn't able to get the pictures to display exactly as they appear in the screenshot. The main issue seems to be that the graphics (if not modified) flow off the page. Relative positioning would throw off the containing div, but absolute positioning would cause horizontal scrolling issues even if scrolling was turned off. I finally came across a solution to completely prevent horizontal scrolling:
 
-/* Disable horizontal scrolling */
+/_ Disable horizontal scrolling _/
 
 html,
 body {
-  max-width: 100%;
-  overflow-x: hidden;
+max-width: 100%;
+overflow-x: hidden;
 }
 
-/* Disable horizontal scrolling on mobile */
+/_ Disable horizontal scrolling on mobile _/
 
 body {
-  position: relative;
+position: relative;
 }
 
 The overflow-x will get rid of the horizontal scroll bar on desktops but does not stop horizontal scrolling on mobile. Setting the body to position: relative gets rid of all horizontal scrolling.
