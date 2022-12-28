@@ -14,7 +14,6 @@ This is a solution to the [Easybank landing page challenge on Frontend Mentor](h
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -52,54 +51,41 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Desktop-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+A site with this many components required a good amount of testing to make sure it displays correctly at different screen sizes. I had to adjust the flex and grid layouts incrementally at several points to make sure the app scales properly as the screen width scales down.
 
-To see how you can add code snippets, see below:
+One of the most difficult parts of the layout was handling the background images in the first section after the header. Even after many attempts I wasn't able to get the pictures to display exactly as they appear in the screenshot. The main issue seems to be that the graphics (if not modified) flow off the page. Relative positioning would throw off the containing div, but absolute positioning would cause horizontal scrolling issues even if scrolling was turned off. I finally came across a solution to completely prevent horizontal scrolling:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+/* Disable horizontal scrolling */
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
-```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉")
+/* Disable horizontal scrolling on mobile */
+
+body {
+  position: relative;
 }
-```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+The overflow-x will get rid of the horizontal scroll bar on desktops but does not stop horizontal scrolling on mobile. Setting the body to position: relative gets rid of all horizontal scrolling.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Continuing to get a better handle on page layout, such as with background images and CSS Grid. Also, learning how to integrate CSS and page design with a framework like React or Vue where the page state is being updated, or where data is being fetched from a server to be displayed on screen. For example, if the data for the blog posts in this project had come from a server rather than being hard-coded values.
 
 ### Useful resources
 
 - [A Modern CSS Reset](https://piccalil.li/blog/a-modern-css-reset/) - I used this, with a few modifications of my own, to unset the default browser styling. Resetting the CSS makes it much easier to avoid unknowns interfering with my CSS rules
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [CSS Tricks](https://css-tricks.com/) - I constantly consult this site for Flexbox, Grid, and other CSS topics.
+- [CSS Filter Generator](https://codepen.io/sosuke/pen/Pjoqqp) - I used this codepen tool to create CSS filters for the SVG hover states.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Github - [joshdail](https://github.com/joshdail)
+- Frontend Mentor - [@joshdail](https://www.frontendmentor.io/profile/joshdail)
